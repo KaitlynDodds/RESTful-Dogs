@@ -1,0 +1,23 @@
+{
+  "name": "restful-dogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaitlynDodds/RESTful-Dogs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaitlynDodds/RESTful-Dogs/issues"
+  },
+  "homepage": "https://github.com/KaitlynDodds/RESTful-Dogs#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  }
+}

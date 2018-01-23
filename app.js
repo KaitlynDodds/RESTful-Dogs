@@ -19,9 +19,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, '/public/semantic')));
 
 // routes
-var index = require('./routes/index');
-app.use('/', index);
-
-
+app.use(require('./routes'));
 
 

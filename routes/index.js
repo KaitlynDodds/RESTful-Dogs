@@ -31,4 +31,9 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/dogs/:id', function(req, res) {
+    var id = req.params.id;
+    res.send('Hello from show' + id);
+});
+
 module.exports = router;

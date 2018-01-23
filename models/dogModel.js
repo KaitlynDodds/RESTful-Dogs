@@ -1,10 +1,18 @@
-const express = require('express');
-const router = express.Router();
 const mongoose = require('mongoose');
 
-const Dog = require('../models/dogModel');
+mongoose.connect('mongodb://127.0.0.1/dogs');
 
-// CREATE TEST DOG
+// dog schema 
+var dogSchema = new mongoose.Schema({
+    name: String,
+    breed: String,
+    age: Number,
+    available: Boolean,
+    description: String,
+    image: String
+});
+
+// CREATE SAMPLE DOG
 // Dog.create({
 //     name: "Rufus",
 //     breed: "Mutt",
@@ -21,14 +29,5 @@ const Dog = require('../models/dogModel');
 //     }
 // });
 
-router.get('/', function(req, res) {
-    Dog.find({}, function(err, dogs) {
-        if (err) {
-            console.log('UNABLE TO RETREIVE DOGS FROM DB');
-        } else {
-            res.render('views/landing', {dogs: dogs});
-        }
-    });
-});
-
-module.exports = router;
+// export dog model 
+module.exports = mongoose.model("Dog", dogSchema);

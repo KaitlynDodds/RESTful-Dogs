@@ -7,13 +7,13 @@
             <div class="column">
                 <div class="ui raised segment dogGallery">
                     <% if (dog.available) { %>
-                        <a href="#" class="ui green ribbon label">
+                        <a href="/dogs/<%= dog._id %>" class="ui green ribbon label">
                             Available!
                         </a>                        
                     <% } %>
                     
                     <h2 class="ui header">
-                        <a href="#">
+                        <a href="/dogs/<%= dog._id %>">
                             <%= dog.name %>
                             <div class="sub header">
                                 <%= dog.breed %>
@@ -21,7 +21,7 @@
                         </a>
                     </h2>
 
-                    <a href="#">
+                    <a href="/dogs/<%= dog._id %>">
                         <img class="ui centered rounded image" src="<%= dog.image %>"/>                          
                     </a>
 

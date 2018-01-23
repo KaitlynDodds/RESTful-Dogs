@@ -33,7 +33,15 @@ router.get('/', function(req, res) {
 
 router.get('/dogs/:id', function(req, res) {
     var id = req.params.id;
-    res.send('Hello from show' + id);
+    Dog.findById({"_id": id}, function(err, dog) {
+        if (err) {
+            console.log(err);
+            res.redirect('/');
+        } else {
+            console.log(dog);
+            res.render('views/show', {dog: dog});
+        }
+    })
 });
 
 module.exports = router;

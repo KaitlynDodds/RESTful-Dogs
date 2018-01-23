@@ -1,0 +1,39 @@
+<% include partials/header %>
+
+<h3>Look at all the doggos</h3>
+
+<div class="ui three column padded doubling stackable grid">
+        <% dogs.forEach(function(dog) { %>
+            <div class="column">
+                <div class="ui raised segment dogGallery">
+                    <% if (dog.available) { %>
+                        <a href="#" class="ui green ribbon label">
+                            Available!
+                        </a>                        
+                    <% } %>
+                    
+                    <h2 class="ui header">
+                        <a href="#">
+                            <%= dog.name %>
+                            <div class="sub header">
+                                <%= dog.breed %>
+                            </div>
+                        </a>
+                    </h2>
+
+                    <a href="#">
+                        <img class="ui centered rounded image" src="<%= dog.image %>"/>                          
+                    </a>
+
+                    <div class="description">
+                        <%= dog.description %>
+                    </div>
+
+                </div>
+            </div>
+        <% }); %>
+</div>
+
+<button class="ui button">New Dog</button>
+
+<% include partials/footer %>

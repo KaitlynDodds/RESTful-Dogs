@@ -1,0 +1,10 @@
+.dogGallery img {
+    padding-bottom: 15px;
+}
+
+.dogGallery:hover {
+    border: solid 1px rgb(173, 173, 173);
+    -moz-box-shadow: 5px 5px 5px rgb(109, 108, 108);
+    -webkit-box-shadow: 5px 5px 5px rgb(109, 108, 108);
+    box-shadow: 5px 5px 5px rgb(109, 108, 108);
+}

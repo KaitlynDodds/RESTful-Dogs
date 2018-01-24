@@ -49,6 +49,18 @@ router.post('/dogs', function(req, res) {
     });
 });
 
+// EDIT
+router.get('/dogs/:id/edit', function(req, res) {
+    const id = req.params.id;
+    Dog.findById({"_id": id}, function(err, dog) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('views/edit', {dog, dog});    
+        }
+    });
+});
+
 // SHOW
 router.get('/dogs/:id', function(req, res) {
     var id = req.params.id;

@@ -21,6 +21,7 @@ const Dog = require('../models/dogModel');
 //     }
 // });
 
+// INDEX
 router.get('/', function(req, res) {
     Dog.find({}, function(err, dogs) {
         if (err) {
@@ -31,6 +32,17 @@ router.get('/', function(req, res) {
     });
 });
 
+// NEW 
+router.get('/dogs/new', function(req, res) {
+    res.render('views/new');
+});
+
+// CREATE 
+router.post('/dogs', function(req, res) {
+    res.send('worked');
+});
+
+// SHOW
 router.get('/dogs/:id', function(req, res) {
     var id = req.params.id;
     Dog.findById({"_id": id}, function(err, dog) {
@@ -43,5 +55,7 @@ router.get('/dogs/:id', function(req, res) {
         }
     })
 });
+
+
 
 module.exports = router;

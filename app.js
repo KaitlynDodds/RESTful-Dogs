@@ -1,7 +1,8 @@
 const express   = require('express'),
       app       = express(),
       mongoose  = require('mongoose'),
-      path      = require('path');
+      path      = require('path'),
+      bodyParser = require('body-parser');
 
 
 // App Port
@@ -14,6 +15,9 @@ app.set('view engine', 'ejs');
 
 // Public dir setup 
 app.use(express.static(__dirname + '/public'));
+
+// body parser
+app.use(bodyParser.urlencoded({extended: true}));
 
 // semantic ui
 app.use(express.static(path.join(__dirname, '/public/semantic')));

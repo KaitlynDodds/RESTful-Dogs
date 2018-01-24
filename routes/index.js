@@ -1,25 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-
 const Dog = require('../models/dogModel');
 
 // CREATE TEST DOG
-// Dog.create({
-//     name: "Rufus",
-//     breed: "Mutt",
-//     age: 4,
-//     available: true,
-//     description: "Rufus is a fun loving pup looking for his forever home. If you have an active lifestyle and are looking for a companion to take on the trails, Rufus could be just the dog for you.",
-//     image: "http://cdn1-www.dogtime.com/assets/uploads/2011/01/file_23228_mutt.jpg"
-// }, function(err, dog) {
-//     if (err) {
-//           console.log('Unable to add dog to db...');
-//     } else {
-//           console.log('NEW DOG');
-//           console.log(dog);
-//     }
-// });
+
 
 // INDEX
 router.get('/', function(req, res) {
@@ -39,7 +24,29 @@ router.get('/dogs/new', function(req, res) {
 
 // CREATE 
 router.post('/dogs', function(req, res) {
-    res.send('worked');
+    console.log(req.body);
+    const name      = req.body.name,
+          breed     = req.body.breed,
+          age       = req.body.age,
+          status    = req.body.status,
+          desc      = req.body.description,
+          image     = req.body.image;
+    Dog.create({
+        name: name,
+        breed: breed,
+        age: age,
+        status: status,
+        description: desc,
+        image: image
+    }, function(err, dog) {
+        if (err) {
+            console.log('Unable to add dog to db...');
+        } else {
+            console.log('NEW DOG');
+            console.log(dog);
+            res.redirect('/dogs/' + dog._id);
+        }
+    });
 });
 
 // SHOW

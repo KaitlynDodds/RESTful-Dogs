@@ -2,20 +2,50 @@
 
 <form method="POST" action="/dogs" class="ui form">
     <div class="field">
-        <label>First Name</label>
-        <input type="text" name="first-name" placeholder="First Name">
+        <label>Dog Name</label>
+        <input type="text" name="name" placeholder="Fido">
     </div>
-    <div class="field">
-        <label>Last Name</label>
-        <input type="text" name="last-name" placeholder="Last Name">
-    </div>
-    <div class="field">
-        <div class="ui checkbox">
-        <input type="checkbox" tabindex="0" class="hidden">
-        <label>I agree to the Terms and Conditions</label>
+
+    <div class="two fields">
+        <div class="field">
+            <label>Breed</label>
+            <input type="text" name="breed" placeholder="Great Dane">
+        </div>
+
+        <div class="field">
+            <label>Image Link</label>
+            <input type="text" name="image" placeholder="https://www.images/greatimageofdog.jpg">
         </div>
     </div>
+   
+
+    <div class="two fields">
+        <div class="field">
+            <label>Age</label>
+            <input type="number" name="age" placeholder="5">
+        </div>
+
+        <div class="field">
+            <label>Status</label>
+            <div class="ui selection dropdown">
+                <input type="hidden" name="status">
+                <i class="dropdown icon"></i>
+                <div class="default text">Dog Status</div>
+                <div class="menu">
+                    <div class="item" data-value="available">Available</div>
+                    <div class="item" data-value="adoption-pending">Adoption Pending</div>
+                    <div class="item" data-value="unavailable">Unavailable</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="field">
+        <label>Description</label>
+        <textarea name="description" placeholder="Fido loves to play fetch but barks at birds..."></textarea>
+    </div>
     <button class="ui button" type="submit">Submit</button>
+    <div class="ui error message"></div>
 </form>
 
 <% include partials/footer %>

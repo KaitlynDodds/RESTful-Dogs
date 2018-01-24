@@ -42,3 +42,7 @@
 #dogInfoList div div {
     margin-bottom: 5px; 
 }
+
+#dogInfoStatus {
+    text-transform: capitalize;
+}

@@ -29,7 +29,7 @@
                 </div>
                 <div class="item">
                     <div class="header">Status</div>
-                    Available/Unavailable/Adoption Pending
+                    <span id="dogInfoStatus" ><%= dog.status %></span>
                 </div>
                 <div class="item">
                     <div class="header">Description</div>
@@ -39,7 +39,7 @@
     </div>
 </div>
 
-<% if (dog.available) { %>
+<% if (dog.status === "available") { %>
     <button class="huge ui fluid green button">
             Adopt <%= dog.name %>!
     </button>

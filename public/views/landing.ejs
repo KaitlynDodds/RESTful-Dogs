@@ -2,15 +2,13 @@
 
 <h3>Look at all the doggos</h3>
 
+<a class="ui button" href="/dogs/new" >New Dog</a>
+
 <div class="ui three column padded doubling stackable grid">
         <% dogs.forEach(function(dog) { %>
             <div class="column">
                 <div class="ui raised segment dogGallery">
-                    <% if (dog.available) { %>
-                        <a href="/dogs/<%= dog._id %>" class="ui green ribbon label">
-                            Available!
-                        </a>                        
-                    <% } %>
+                    <% include partials/ribbon-label %>
                     
                     <h2 class="ui header">
                         <a href="/dogs/<%= dog._id %>">
@@ -33,7 +31,5 @@
             </div>
         <% }); %>
 </div>
-
-<a class="ui button" href="/dogs/new" >New Dog</a>
 
 <% include partials/footer %>

@@ -1,0 +1,13 @@
+<% if (dog.status === "available") { %>
+    <a href="/dogs/<%= dog._id %>" class="ui green ribbon label">
+        Available!
+    </a>                        
+<% } else if (dog.status === "adoption-pending") { %>
+    <a href="/dogs/<%= dog._id %>" class="ui blue ribbon label">
+        Adoption Pending!
+    </a> 
+<% } else { %>
+    <a href="/dogs/<%= dog._id %>" class="ui red ribbon label">
+        Unavailable!
+    </a> 
+<% } %>

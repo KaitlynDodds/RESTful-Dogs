@@ -13,11 +13,7 @@
 <div id="dogInfoContainer" class="ui stackable two column grid container">
     <div class="column">
         <div class="ui compact segment">
-                <% if (dog.available) { %>
-                    <a href="/dogs/<%= dog._id %>" class="ui green ribbon label">
-                        Available!
-                    </a>                        
-                <% } %>
+                <% include partials/ribbon-label %>
             <img class="ui large image" src="<%= dog.image %>">
         </div>
     </div>

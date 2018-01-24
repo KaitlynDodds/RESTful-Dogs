@@ -61,6 +61,32 @@ router.get('/dogs/:id/edit', function(req, res) {
     });
 });
 
+// UPDATE
+router.put('/dogs/:id', function(req, res) {
+    var id = req.params.id;
+    Dog.findByIdAndUpdate(id, 
+        { $set: 
+            {
+                name: req.body.name,
+                breed: req.body.breed,
+                age: req.body.age,
+                status: req.body.status,
+                description: req.body.description,
+                image: req.body.image
+            } 
+        }, 
+        { 
+            new: true
+        },
+        function(err, dog) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect('/dogs/' + dog._id);
+            }
+        });
+});
+
 // SHOW
 router.get('/dogs/:id', function(req, res) {
     var id = req.params.id;

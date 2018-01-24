@@ -16,3 +16,29 @@
     -webkit-box-shadow: 5px 5px 5px rgb(109, 108, 108);
     box-shadow: 5px 5px 5px rgb(109, 108, 108);
 }
+
+#dogInfoHeader h1 {
+    display: inline-block;
+}
+
+#dogInfoHeader div:nth-child(2){
+    float: right;
+}
+
+#editProfileBtn:hover {
+    border: solid 1px #21BA45;
+    color: #21BA45 !important;
+}
+
+#deleteProfileBtn:hover {
+    border: solid 1px #DB2828;
+    color: #DB2828 !important;
+}
+
+#dogInfoContainer {
+    margin: 20px 0;
+}
+
+#dogInfoList div div {
+    margin-bottom: 5px; 
+}

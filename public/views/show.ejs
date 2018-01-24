@@ -1,3 +1,57 @@
 <% include partials/header %>
 
-<h3><%= dog.name %></h3>
+<div id="dogInfoHeader">
+    <h1 class="ui header">
+        <%= dog.name %>
+    </h1>
+    <div class="ui basic buttons">
+        <div id="editProfileBtn" class="ui button">Edit Profile</div>
+        <div id="deleteProfileBtn" class="ui button">Delete Profile</div>
+    </div>         
+</div>
+
+<div id="dogInfoContainer" class="ui stackable two column grid container">
+    <div class="column">
+        <div class="ui compact segment">
+                <% if (dog.available) { %>
+                    <a href="/dogs/<%= dog._id %>" class="ui green ribbon label">
+                        Available!
+                    </a>                        
+                <% } %>
+            <img class="ui large image" src="<%= dog.image %>">
+        </div>
+    </div>
+    <div class="column">
+            <div id="dogInfoList" class="ui large very relaxed list">
+                <div class="item">
+                    <div class="header">Breed</div>
+                    <%= dog.breed %>
+                </div>
+                <div class="item">
+                    <div class="header">Age</div>
+                    <%= dog.age %> Year(s)
+                </div>
+                <div class="item">
+                    <div class="header">Status</div>
+                    Available/Unavailable/Adoption Pending
+                </div>
+                <div class="item">
+                    <div class="header">Description</div>
+                    <span><%= dog.description %></span>
+                </div>
+            </div>
+    </div>
+</div>
+
+<% if (dog.available) { %>
+    <button class="huge ui fluid green button">
+            Adopt <%= dog.name %>!
+    </button>
+<% } else { %>
+    <button class="huge ui fluid disabled button">
+        Adopt <%= dog.name %>!
+    </button>
+<% } %>
+
+
+<% include partials/footer %>

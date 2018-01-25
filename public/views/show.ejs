@@ -6,7 +6,9 @@
     </h1>
     <div class="ui basic buttons">
         <a href="/dogs/<%= dog._id %>/edit" id="editProfileBtn" class="ui button">Edit Profile</a>
-        <a href="#" id="deleteProfileBtn" class="ui button">Delete Profile</a>
+        <form action="/dogs/<%= dog._id %>?_method=delete" method="POST">
+            <button id="deleteProfileBtn" class="ui button">Delete Profile</button>
+        </form>
     </div>         
 </div>
 

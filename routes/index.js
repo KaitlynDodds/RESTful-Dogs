@@ -101,6 +101,19 @@ router.get('/dogs/:id', function(req, res) {
     })
 });
 
+// DELETE
+router.delete('/dogs/:id', function(req, res) {
+    var id = req.params.id;
+    Dog.findByIdAndRemove(id, function(err, dog) {
+        if (err) {
+            console.log('Unable to delete dog');
+        } else {
+            console.log('DELETED');
+            console.log(dog);
+            res.redirect('/');
+        }
+    });
+});
 
 
 module.exports = router;

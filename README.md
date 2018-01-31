@@ -1,0 +1,1 @@
+Simple Express application demonstrating RESTful routing. Application utilizes semantic ui and a mongodb database. 
